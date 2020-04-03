@@ -1,0 +1,27 @@
+{% for idea in ideas %}
+<div class="idea">
+    <img src="{{idea.image}}" alt="Imagem de {{idea.title}}">
+    <div class="content">
+        <h3>{{idea.title}}</h3>        
+        <p>{{idea.category}}</p>
+        <div class="description">
+            {{idea.description}}
+        </div>
+        <a href="{{idea.link}}" target="_blank">Ir para a ideia</a>
+    
+    </div>
+
+    <div class="deletar">
+        <form class="form2" action="/delete" method="POST" onsubmit="return checkId(event,'{{idea.id}}')">
+            <button id="id" class="btn">
+                <i class="fa fa-trash"></i>
+            </button>
+            <input id="idtosend" name = "id" class="esconder" type="text">
+        
+        </form>
+        
+    </div>
+
+    
+</div>
+{% endfor %}
