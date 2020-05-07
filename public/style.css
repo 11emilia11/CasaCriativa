@@ -1,7 +1,26 @@
+
+html{
+
+    --bg: #e5e5e5; /* background do site */
+    --ideabg: #fff;
+    --text: #25282b;
+    --smoothtext: #777;
+}
+
+html[data-theme='dark'] {
+    --bg: #474962;
+    --ideabg: #777195;
+    --text: #e5e5e5;
+    --smoothtext: #b2b2b2;  
+      
+  }
+
+
+
 body {
     
-    background: #e5e5e5;
-    color: #25282b;
+    background:var(--bg);
+    color: var(--text);
     
     
     font-family: 'Montserrat', sans-serif;
@@ -11,23 +30,11 @@ body {
 
 }
 
-/*
-body.dark {
-    background: #474962;
-    color: #e5e5e5;
-    text-align: justify;
-    
-    font-family: 'Montserrat', sans-serif;
-
-    margin: 0;
-    visibility: hidden;
-}
-*/
 
 
 .idea {
     display: flex;
-    background-color: #fff;
+    background-color:var(--ideabg);
     box-shadow: 0 4px 16px -8px rgba(1, 1, 1, 0.1);
     border-radius: 8px;
     padding: 32px;
@@ -151,7 +158,7 @@ footer {
     line-height: 18px;
     letter-spacing: 0.2px;
 
-    color: #777;
+    color: var(--smoothtext);
 }
 
 footer a {
@@ -172,7 +179,7 @@ footer a {
 
 .idea p {
     margin: 8px 0;
-    color: #777;
+    color: var(--smoothtext);
 
 }
 
@@ -370,7 +377,7 @@ form button:hover {
 }
 
 #page-ideas nav li a {
-    color: #25282b;
+    color: #25282b; /* MUDAR*/
 
 }
 
@@ -412,4 +419,44 @@ section#ideas {
 
 section#ideas .idea {
     margin: 0;
+}
+
+/* TOGGLE DARK MODE  */
+.toggle-container input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.toggle-container label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 52px;
+    height: 27px;
+    background-color: grey;
+    float: right;
+    border-radius: 100px;
+    position: relative;
+}
+
+
+.toggle-container label:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+.toggle-container input:checked + label {
+    background: #3694FF;
+}
+
+.toggle-container input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
 }
