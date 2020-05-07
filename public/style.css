@@ -1,19 +1,23 @@
 
-html{
+:root {
 
     --bg: #e5e5e5; /* background do site */
     --ideabg: #fff;
     --text: #25282b;
     --smoothtext: #777;
+    --inicio: #25282b;
 }
 
-html[data-theme='dark'] {
+[data-theme="dark"] {
     --bg: #474962;
     --ideabg: #777195;
     --text: #e5e5e5;
-    --smoothtext: #b2b2b2;  
+    --smoothtext: #b2b2b2; 
+    --inicio: #fff; 
       
-  }
+}
+
+
 
 
 
@@ -377,7 +381,7 @@ form button:hover {
 }
 
 #page-ideas nav li a {
-    color: #25282b; /* MUDAR*/
+    color: var(--inicio); /* MUDAR*/
 
 }
 
@@ -421,7 +425,7 @@ section#ideas .idea {
     margin: 0;
 }
 
-/* TOGGLE DARK MODE  */
+/* TOGGLE DARK MODE  
 .toggle-container input[type=checkbox]{
     height: 0;
     width: 0;
@@ -460,3 +464,59 @@ section#ideas .idea {
     left: calc(100% - 5px);
     transform: translateX(-100%);
 }
+
+*/
+
+.theme-switch-wrapper {
+    display: inline;
+    margin: 0 10px 0 10px;
+    align-items: left;
+  }
+  .theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+  }
+  
+  .theme-switch input {
+    display:none;
+  }
+  
+  .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+  }
+  
+  input:checked + .slider {
+    background-color: #66bb6a;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }

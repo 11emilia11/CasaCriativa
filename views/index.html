@@ -5,14 +5,12 @@
 <section class="intro">
 
     <header>
+        
         <a href="/">
             <img src="/logo.png" alt="Logomarca da Casa Criativa">
             
         </a>
-        <div class="toggle-container">
-            <input type="checkbox" id="switch" name="theme"/>
-            <label for="switch">Toggle</label>
-        </div>
+        
         
     </header>
 
@@ -33,6 +31,7 @@
             Comece clicando em ver ideias para ver as ideias cadastradas e contribua adicionando a sua ideia. 
 
         </p>
+        
 
 
     </main>
@@ -41,14 +40,16 @@
         <button onclick="onOff()">+ Adicionar Ideia</button>        
 
         <a href="/ideias" class='button'>Ver ideias</a>
+       
         
-        <!-- BOTÃO DE MUDAR O TEMA
-        <div>
-            <label class="switch" class="round">
-            <input type="checkbox">
-            <span class="slider round"></span>
-        </label></div>
-        -->
+
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round"></div>
+          </label>
+         
+        </div>
         
 
     </section>

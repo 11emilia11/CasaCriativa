@@ -16,14 +16,7 @@ function onOff(){
 }
 
 
-function darkOn(){
-    document.querySelector("body").classList.toggle("dark")
-    document.querySelector("#lgt").classList.toggle("#hide")
-    
-    
-   
-    
-}
+
 //let ID = " "
 function checkId(event,id) {   
 
@@ -58,24 +51,15 @@ function checkFields(event) {
     }
 }
 
-var checkbox = document.querySelector('input[name=theme');
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
-checkbox.addEventListener('change', function() {
-  if(this.checked) {
-    trans()
-    document.documentElement.setAttribute('data-theme', 'dark');
-
-  }
-  else {
-    trans()
-    document.documentElement.setAttribute('data-theme', 'light');
-
-  }
-});
-
-let trans = () => {
-  document.documentElement.classList.add('transition');
-  window.setTimeout(() => {
-    document.documentElement.classList.remove('transition')
-  }, 1000)
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }    
 }
+
+toggleSwitch.addEventListener('change', switchTheme, false);
